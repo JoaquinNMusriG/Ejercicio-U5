@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+    <link rel="stylesheet" href="{{ url_for("static", filename="css/estilos.css") }}">
+</head>
+<body>
+    <br>
+    <div class = error>
+      <h1> {{ error }} </h1>
+    </div>
+    <div class = btnerror>
+			<br><br><a href = "{{ url_for('inicio') }}" > Intentar de nuevo </a><br><br>
+	  </div>
+</body>
+</html>

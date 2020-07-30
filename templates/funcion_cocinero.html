@@ -1,0 +1,37 @@
+{% extends "base_template.html" %}
+{% block title %}Cocinero{% endblock %}
+{% block content %}
+{%if pedidos%}
+    <div class = titulo>
+      <h1>Pedidos Pendientes</h1>
+    </div>
+    <div class="container">
+    {%for pedido in pedidos%}
+            <div>
+                <label>Pedido {{pedido.NumPedido}}</label><br>
+                {%if pedido.Observacion%}
+                  <label>Observación: {{pedido.Observacion}}</label><br>
+                {%endif%}
+                <form action ='{{ url_for("Cocinero", usuarioDNI = usuario) }}' method="post">
+                    <label>Items:</label><br>
+                        <div>
+                              {%for item in pedido.items.all()%}
+                                  {%if item.Estado == "Listo"%}
+                                    <label><input type="checkbox" name="{{item.NumItem}}" checked>{{item.producto.Nombre}} - {{item.Estado}}</label><br>
+                                  {%else%}
+                                    <label><input type="checkbox" name="{{item.NumItem}}">{{item.producto.Nombre}} - {{item.Estado}}</label><br>
+                                  {%endif%}
+                              {%endfor%}
+                        </div>
+                    <input type="submit" value="Confirmar" class = boton>
+                    <br>
+                </form>
+            </div>
+    {%endfor%}
+    </div>
+{%else%}
+<div class = titulo>
+  <h1>Todos los pedidos están ENTREGADOS</h1>
+</div>
+{%endif%}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base_template.html" %}
+{% block title %}Mozo{% endblock %}
+{% block content %}
+  <div class = 'titulo'>
+    <h1> Funciones para Mozo</h1>
+  </div>
+  <ul>
+    <li> <a href = '{{ url_for('nuevo_pedido', usuarioDNI = usuario) }}'> Crear Nuevo Pedido </a></li><br>
+    <li> <a href = '{{ url_for('listar_pedidos', usuarioDNI = usuario) }}'> Listar Pedidos Vigentes</a></li><br>
+  </ul>
+{% endblock %}

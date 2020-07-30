@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear nuevo Pedido}</title>
+    <link rel="stylesheet" href="{{ url_for("static", filename="css/estilos.css") }}">
+</head>
+<body>
+    <br>
+    <div class = 'titulo'>
+      <h1>Creación de Pedido</h1>
+    </div>
+    <div>
+      <form action = "{{ url_for('nuevo_pedido', usuarioDNI = usuario) }}" method = "post" class = "container">
+        <label>Pedido Nuevo</label><br><br>
+        <label>Ingrese mesa: <input type="number" name="Mesa" value = {{mesa}} placeholder="Mesa" required></label><br>
+        <label>Seleccione los productos:</label><br>
+        {%for producto in productos%}
+            <label><input type='submit' value = '{{producto.NumProducto}}' name="item"> {{producto.Nombre}} - {{producto.PrecioUnitario}}$</label><br>
+        {%endfor%}
+        <input type='submit' value = 'Confirmar' name="item" class = boton></input>
+        <br>
+      </form>
+    </div>
+    <br>
+    <div class = 'container'>
+        <label>Pedido Actual:</label><br><br>
+        <ul>
+          {%for item in pedido%}
+              <li><label>{{item.producto.Nombre}} x1</label></li>
+          {%endfor%}
+        </ul>
+    </div>
+    <div class="myDiv">
+      <br><br><a href = "{{ url_for('Mozo', usuarioDNI = usuario) }}" > Cancelar </a><br><br>
+    </div>
+</body>
+</html>

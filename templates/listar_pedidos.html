@@ -1,0 +1,35 @@
+{% extends "base_template.html" %}
+{% block title %}Listado de Pedidos{% endblock %}
+{% block content %}
+      <div class = titulo>
+        <h1> Pedidos </h1>
+      </div>
+        {%if pedidos%}
+            <div class="container">
+            {%for pedido in pedidos%}
+              <div>
+                    <label>Pedido {{pedido.NumPedido}}</label>
+                    <ul>
+                        <li><label>Mesa: {{pedido.Mesa}}</label></li>
+                        <li><label>Mozo: {{pedido.DNIMozo}}</label></li>
+                        <li><label>Items:</label>
+                            <div>
+                                <ul>
+                                    {%for item in pedido.items.all()%}
+                                        <li><label>{{item.producto.Nombre}}</label></li>
+                                    {%endfor%}
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            {%endfor%}
+            <br>
+            </div>
+        {%else%}
+        <h3>No hay pedidos</h3>
+        {%endif%}
+      <div class="myDiv">
+        <br><br><a href = "{{ url_for('Mozo', usuarioDNI = usuario) }}" > Volver </a><br><br>
+      </div>
+{% endblock %}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Observaciones del Pedido</title>
+    <link rel="stylesheet" href="{{ url_for("static", filename="css/estilos.css") }}">
+</head>
+<body>
+    <br>
+    <div class = 'titulo'>
+      <h1>Observación del Pedido</h1>
+    </div>
+    <form action = "{{ url_for('nuevo_pedido', usuarioDNI = usuario) }}" method = "post" class = "container">
+      <label for = 'observaciones'>Ingresa las observaciones: </label><br>
+      <textarea name = 'observaciones' placeholder = 'Observaciones' cols="60" rows="8"></textarea><br>
+      <input type = "submit" value = "Terminar Pedido" name = 'item' class = boton></input>
+      <br>
+    </form>
+    <div class="myDiv">
+      <br><br><a href = "{{ url_for('Mozo', usuarioDNI = usuario) }}" > Cancelar </a><br><br>
+    </div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #464;
+}
+ul {
+  list-style-type: none;
+  margin-left: 2em;
+  padding: 0;
+  width: 200px;
+  background-color: #76CADC;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #2b8699;
+  color: white;
+}
+.container {
+  padding-top: 1%;
+  width: 50%;
+  margin: 0 auto;
+  background-color: #76CADC;
+}
+
+.container label {
+	font-weight: bold;
+	margin-bottom: 2em;
+	margin-left: 2em;
+	color: #123A42;
+}
+.container input {
+	margin-bottom: 1em;
+	margin-left: 2em;
+}
+.container textarea {
+	min-height: 12em;
+	resize: vertical;
+	margin-left: 2em;
+}
+.titulo {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+  display: flex;
+  background-color: #f0ba4f;
+  color: #377ba8;
+  flex-direction: column;
+  box-shadow: 0px 10px 35px 10px rgba(0,0,0,0.2);
+  border-radius: 6px;
+  align-items: center;
+  margin-bottom: 3%;
+}
+.error {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+  display: flex;
+  background-color: #e64d22;
+  color: #edce1f;
+  flex-direction: column;
+  box-shadow: 0px 10px 35px 10px rgba(0,0,0,0.2);
+  border-radius: 6px;
+  align-items: center;
+  margin-bottom: 3%;
+}
+.boton{
+	width: 20%;
+  cursor: pointer;
+	display: block;
+  background: #1779bd;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  color: black;
+	margin-left: 2em;
+}
+.cerrar{
+  cursor: pointer;
+	display: block;
+  font-size: 16px;
+  color: black;
+}
+.btnerror {
+  margin-bottom: 2em;
+	margin-right: 4em;
+  text-align: center;
+}
+.myDiv {
+  margin-bottom: 2em;
+	margin-right: 4em;
+  text-align: right;
+}
